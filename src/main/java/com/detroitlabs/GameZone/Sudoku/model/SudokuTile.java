@@ -6,17 +6,17 @@ public class SudokuTile {
     //All of our Game tiles
 
 
-    int givenNum;
+    int actualNumber;
 
     public SudokuTile(int givenNum) {
-        this.givenNum = givenNum;
+        this.actualNumber = givenNum;
     }
 
-    public int getGivenNum() {
-        return givenNum;
+    public int getActualNumber() {
+        return actualNumber;
     }
 
-    public void setGivenNum(int givenNum) {
-        this.givenNum = givenNum;
+    public void setActualNumber(int actualNumber) {
+        this.actualNumber = actualNumber;
     }
 }
