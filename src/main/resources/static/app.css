@@ -71,7 +71,9 @@ body {
     left: 0;
     width: 9rem;
     height: 9rem;
+    outline: 1px solid #ccc;
     background-color:blue;
+
 }
 
 /*.redBlock:hover + .hide {*/

@@ -11,8 +11,9 @@ public class SudokuTile {
     int actualNumber;
     boolean fixedNumber;
     Random rand = new Random();
+    int id;
 
-    public SudokuTile(int givenNum) {
+    public SudokuTile(int givenNum, int id) {
         int x = rand.nextInt(2);
         if( x==0 ){
             actualNumber = 0;
@@ -21,6 +22,7 @@ public class SudokuTile {
             this.actualNumber = givenNum;
             fixedNumber = true;
         }
+        this.id = id;
 
     }
 
@@ -38,5 +40,13 @@ public class SudokuTile {
 
     public void setFixedNumber(boolean fixedNumber) {
         this.fixedNumber = fixedNumber;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

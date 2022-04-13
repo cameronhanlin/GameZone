@@ -5,7 +5,9 @@ import com.detroitlabs.GameZone.Sudoku.model.SudokuTile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
@@ -43,6 +45,18 @@ public class SudokuController {
         System.out.println("Tool switched");
         modelMap = cycleModelMaps(modelMap);
 
+        return "sudoku";
+    }
+
+    @RequestMapping("/UserMove/{tileID}")
+    public String makePlayerMove(@PathVariable String tileID, @RequestParam String makeMark, ModelMap modelMap){
+        System.out.println("tile number "+tileID);
+        System.out.println("Mark it a "+makeMark);
+        modelMap = cycleModelMaps(modelMap);
+
+        //check makeMark check that its actually a number
+        //if its a good number set the tile and number to change it?
+        //make it pretty
         return "sudoku";
     }
 
