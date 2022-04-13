@@ -1,15 +1,31 @@
 package com.detroitlabs.GameZone.Sudoku.model;
 
 public class SudokuTile {
-
-
-    //All of our Game tiles
-
-
     int actualNumber;
+    int expectedNumber;
+    boolean fixedNumber;
 
-    public SudokuTile(int givenNum) {
-        this.actualNumber = givenNum;
+    public boolean isFixedNumber() {
+        return fixedNumber;
+    }
+
+    public void setFixedNumber(boolean fixedNumber) {
+        this.fixedNumber = fixedNumber;
+    }
+
+    public SudokuTile(int actualNumber, int expectedNumber, boolean fixedNumber) {
+        this.actualNumber = actualNumber;
+        this.expectedNumber = expectedNumber;
+        this.fixedNumber = fixedNumber;
+
+    }
+
+    public int getExpectedNumber() {
+        return expectedNumber;
+    }
+
+    public void setExpectedNumber(int expectedNumber) {
+        this.expectedNumber = expectedNumber;
     }
 
     public int getActualNumber() {
