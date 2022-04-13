@@ -90,8 +90,15 @@ public class SudokuBoard {
         return false;
     }
 
-    public void updateCell(int row, int col, int number) {
-        board.get(row).get(row).setActualNumber(number);
+    public void updateCell(int id, int number) {
+        for (ArrayList<SudokuTile> row : board) {
+            for (SudokuTile tile: row) {
+                if (tile.getId() == id) {
+                    tile.setActualNumber(number);
+                    break;
+                }
+            }
+        }
     }
 
     public boolean validMove(int row, int col, int number) {

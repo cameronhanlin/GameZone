@@ -52,7 +52,8 @@ public class SudokuController {
     @RequestMapping("/UserMove/{tileID}")
     public String makePlayerMove(@PathVariable String tileID, @RequestParam String makeMark, ModelMap modelMap){
         System.out.println("tile number "+tileID);
-        System.out.println("Mark it a "+makeMark);
+        System.out.println("Mark it a "+ makeMark);
+        sudokuBoard.updateCell(Integer.valueOf(tileID), Integer.valueOf(makeMark));
         modelMap = cycleModelMaps(modelMap);
 
         //check makeMark check that its actually a number
