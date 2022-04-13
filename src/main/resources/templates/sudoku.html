@@ -21,11 +21,16 @@
 
 </div>
 
+<div class="numbers">Hover over me.</div>
+<div class="hide">I am shown when someone hovers over the div above.</div>
+
+
 <div>
     <a href="/startNewGame">
         <button >Start new Game</button>
     </a>
 </div>
+
 
 <div class="sudoku">
     <div th:each="currentRow : ${theBoard}">
@@ -37,48 +42,15 @@
                     </div>
                     <div th:hidden="${currentTile.fixedNumber}">
                         <div th:hidden="${!writingTool}"> <!--Using a pen-->
+                            <div class="blueBlock">1 2 3 4 5 6 7 8 9
 
-                            <input type="radio" name="a1" id="a1-0" checked="checked">
-                            <input type="checkbox" name="a1-pencil" id="a1-1-pencil">
-                            <input type="radio" name="a1" id="a1-1">
-                            <input type="checkbox" name="a1-pencil" id="a1-2-pencil">
-                            <input type="radio" name="a1" id="a1-2">
-                            <input type="checkbox" name="a1-pencil" id="a1-3-pencil">
-                            <input type="radio" name="a1" id="a1-3">
-                            <input type="checkbox" name="a1-pencil" id="a1-4-pencil">
-                            <input type="radio" name="a1" id="a1-4">
-                            <input type="checkbox" name="a1-pencil" id="a1-5-pencil">
-                            <input type="radio" name="a1" id="a1-5">
-                            <input type="checkbox" name="a1-pencil" id="a1-6-pencil">
-                            <input type="radio" name="a1" id="a1-6">
-                            <input type="checkbox" name="a1-pencil" id="a1-7-pencil">
-                            <input type="radio" name="a1" id="a1-7">
-                            <input type="checkbox" name="a1-pencil" id="a1-8-pencil">
-                            <input type="radio" name="a1" id="a1-8">
-                            <input type="checkbox" name="a1-pencil" id="a1-9-pencil">
-                            <input type="radio" name="a1" id="a1-9">
+                            </div>
+                            <div class="redBlock">
 
+                            </div>
+                            <!--<div class="hide">
 
-
-                            <label for="a1-1-pencil" class="pencil">1</label>
-                            <label for="a1-1" class="pen">1</label>
-                            <label for="a1-2-pencil" class="pencil">2</label>
-                            <label for="a1-2" class="pen">2</label>
-                            <label for="a1-3-pencil" class="pencil">3</label>
-                            <label for="a1-3" class="pen">3</label>
-                            <label for="a1-4-pencil" class="pencil">4</label>
-                            <label for="a1-4" class="pen">4</label>
-                            <label for="a1-5-pencil" class="pencil">5</label>
-                            <label for="a1-5" class="pen">5</label>
-                            <label for="a1-6-pencil" class="pencil">6</label>
-                            <label for="a1-6" class="pen">6</label>
-                            <label for="a1-7-pencil" class="pencil">7</label>
-                            <label for="a1-7" class="pen">7</label>
-                            <label for="a1-8-pencil" class="pencil">8</label>
-                            <label for="a1-8" class="pen">8</label>
-                            <label for="a1-9-pencil" class="pencil">9</label>
-                            <label for="a1-9" class="pen">9</label>
-
+                            </div>-->
 
 
 

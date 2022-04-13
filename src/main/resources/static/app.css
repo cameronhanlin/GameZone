@@ -6,9 +6,11 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #FFFFFF;
 }
 
 .sudoku {
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -19,6 +21,7 @@ body {
 }
 
 .sudoku .section {
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -29,6 +32,7 @@ body {
 }
 
 .sudoku .section .cell {
+
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -38,6 +42,52 @@ body {
     height: 9rem;
     outline: 1px solid #ccc;
 }
+
+
+
+
+
+
+
+/*.hide {*/
+/*    display: none;*/
+/*}*/
+
+.redBlock {
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    width: 9rem;
+    height: 9rem;
+    background-color: #FFFFFF;
+}
+
+.blueBlock{
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 9rem;
+    height: 9rem;
+    background-color:blue;
+}
+
+/*.redBlock:hover + .hide {*/
+/*    display: flex;*/
+/*}*/
+
+.redBlock:hover {
+    opacity: 0%;
+    transition: .2s;
+}
+
+
+
+
+
+
 
 
 .row {
