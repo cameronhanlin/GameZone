@@ -1,9 +1,19 @@
 package com.detroitlabs.GameZone.Sudoku.model;
 
 public class SudokuTile {
-    int actualNumber; //user input
-    int expectedNumber; // correct number
-    boolean fixedNumber;
+
+    private int actualNumber; //user input
+    private int expectedNumber; // correct number
+    private boolean fixedNumber;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public boolean isFixedNumber() {
         return fixedNumber;
@@ -13,10 +23,11 @@ public class SudokuTile {
         this.fixedNumber = fixedNumber;
     }
 
-    public SudokuTile(int actualNumber, int expectedNumber, boolean fixedNumber) {
+    public SudokuTile(int id, int actualNumber, int expectedNumber, boolean fixedNumber) {
         this.actualNumber = actualNumber;
         this.expectedNumber = expectedNumber;
         this.fixedNumber = fixedNumber;
+        this.id = id;
 
     }
 

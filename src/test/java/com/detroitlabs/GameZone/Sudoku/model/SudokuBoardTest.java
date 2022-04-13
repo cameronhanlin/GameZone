@@ -15,6 +15,7 @@ class SudokuBoardTest {
     public static void setup() {
         sudokuBoard = new SudokuBoard();
         sudokuBoard.generateNewBoard();
+        sudokuBoard.generateNewBoard();
     }
 
     @Test
@@ -63,7 +64,7 @@ class SudokuBoardTest {
 
     @Test
     void Return_True_Given_Solved_Board() {
-       //TODO
+        //TODO
     }
 
     @Test
@@ -73,5 +74,18 @@ class SudokuBoardTest {
 
         assertFalse(unsolvedBoard.isBoardSolved());
     }
+
+    @Test
+    void Return_Tile_ID() {
+        int idCounter = 1;
+
+        for (ArrayList<SudokuTile> row : sudokuBoard.getBoard()) {
+            for (SudokuTile tile : row) {
+                assertEquals(tile.getId(), idCounter);
+                idCounter++;
+            }
+        }
+    }
+
 
 }
