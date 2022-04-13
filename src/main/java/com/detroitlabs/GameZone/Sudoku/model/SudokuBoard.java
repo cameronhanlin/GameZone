@@ -1,9 +1,11 @@
 package com.detroitlabs.GameZone.Sudoku.model;
 
 import com.detroitlabs.GameZone.Sudoku.service.SudokuService;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
+@Component
 public class SudokuBoard {
     ArrayList<ArrayList<SudokuTile>> board = new ArrayList<>();
 
@@ -13,6 +15,18 @@ public class SudokuBoard {
 
     public void setBoard(ArrayList<ArrayList<SudokuTile>> board) {
         this.board = board;
+    }
+
+
+    public void testBoard(){
+        board.clear();
+        for(int i=0; i<9;i++){
+            ArrayList<SudokuTile> currentRow = new ArrayList<>();
+            for(int j=0; j<9; j++){
+                currentRow.add(new SudokuTile(j));
+            }
+            board.add(currentRow);
+        }
     }
 
     public void generateNewBoard() {

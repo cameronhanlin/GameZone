@@ -1,5 +1,7 @@
 package com.detroitlabs.GameZone.Sudoku.model;
 
+import java.util.Random;
+
 public class SudokuTile {
 
 
@@ -7,9 +9,19 @@ public class SudokuTile {
 
 
     int actualNumber;
+    boolean fixedNumber;
+    Random rand = new Random();
 
     public SudokuTile(int givenNum) {
-        this.actualNumber = givenNum;
+        int x = rand.nextInt(2);
+        if( x==0 ){
+            actualNumber = 0;
+            fixedNumber = false;
+        } else {
+            this.actualNumber = givenNum;
+            fixedNumber = true;
+        }
+
     }
 
     public int getActualNumber() {
@@ -18,5 +30,13 @@ public class SudokuTile {
 
     public void setActualNumber(int actualNumber) {
         this.actualNumber = actualNumber;
+    }
+
+    public boolean isFixedNumber() {
+        return fixedNumber;
+    }
+
+    public void setFixedNumber(boolean fixedNumber) {
+        this.fixedNumber = fixedNumber;
     }
 }

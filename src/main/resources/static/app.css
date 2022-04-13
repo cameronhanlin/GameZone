@@ -1,0 +1,53 @@
+body {
+    height: 100%;
+    width: 100%;
+    min-height: 90rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sudoku {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 81rem;
+    height: 81rem;
+    outline: 2px solid #ccc;
+}
+
+.sudoku .section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 27rem;
+    height: 27rem;
+    outline: 3px solid #ccc;
+}
+
+.sudoku .section .cell {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 9rem;
+    height: 9rem;
+    outline: 1px solid #ccc;
+}
+
+
+.row {
+    display: flex;
+    background-color: DodgerBlue;
+    padding: 5px;
+}
+
+
+.mode-switch {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
