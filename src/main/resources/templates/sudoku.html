@@ -21,10 +21,6 @@
 
 </div>
 
-<div class="numbers">Hover over me.</div>
-<div class="hide">I am shown when someone hovers over the div above.</div>
-
-
 <div>
     <a href="/startNewGame">
         <button >Start new Game</button>
@@ -38,15 +34,18 @@
             <div th:each="currentTile : ${currentRow}">
                 <div class="cell">
                     <div th:hidden="${!currentTile.fixedNumber}">
-                        <div th:text="${currentTile.actualNumber}"></div>
+                        <div th:text="${currentTile.expectedNumber}"></div>
                     </div>
                     <div th:hidden="${currentTile.fixedNumber}">
                         <div th:hidden="${!writingTool}"> <!--Using a pen-->
-                            <form action="/UserMove/a">
-                                <label for="fname">test</label>
-                                <input type="text" id="fname" name="makeMark"><br><br>
+                            <div class="inputBox">
+                                <div th:text="${currentTile.actualNumber}"></div>
+                                <form th:action="'/UserMove/'+${currentTile.id}">
+                                    <label for="fname"></label>
+                                    <input type="text" id="fname" name="makeMark" size="8rem"><br><br>
 
-                            </form>
+                                </form>
+                            </div>
 
 
                         </div>

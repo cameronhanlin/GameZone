@@ -73,6 +73,11 @@ public class SudokuController {
     public ArrayList<ArrayList<SudokuTile>> convertToNineThreeByThree(ArrayList<ArrayList<SudokuTile>> theBoard){
         ArrayList<ArrayList<SudokuTile>> tempBoard = new ArrayList<>();
 
+        if (sudokuBoard.getBoard().size()<8){
+            sudokuBoard.generateNewBoard();
+            theBoard = sudokuBoard.getBoard();
+        }
+
 
         for(int g=0;g<9;g=g+3) {
             for (int h = 0; h < 9; h = h + 3) {

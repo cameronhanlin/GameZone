@@ -43,6 +43,10 @@ body {
     outline: 1px solid #ccc;
 }
 
+.inputBox{
+    align-items: center;
+}
+
 
 
 
