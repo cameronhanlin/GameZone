@@ -33,7 +33,8 @@ public class SudokuController {
 
     @RequestMapping("/startNewGame")
     public String startNewGame(ModelMap modelMap){
-        sudokuBoard.testBoard();
+        //sudokuBoard.testBoard(); this is useless now
+        sudokuBoard.generateNewBoard();//this is better
         System.out.println("New Game made");
         modelMap = cycleModelMaps(modelMap);
         return "sudoku";
