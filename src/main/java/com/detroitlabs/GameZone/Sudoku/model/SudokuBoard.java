@@ -84,6 +84,10 @@ public class SudokuBoard {
         return false;
     }
 
+    public void updateCell(int row, int col, int number) {
+        board.get(row).get(row).setActualNumber(number);
+    }
+
     public boolean validMove(int row, int col, int number) {
         return !isNumberInRow(number, row) && !isNumberInCol(number, col) && !isNumberInSubgrid(row, col, number);
     }

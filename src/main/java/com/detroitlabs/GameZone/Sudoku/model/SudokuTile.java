@@ -1,8 +1,8 @@
 package com.detroitlabs.GameZone.Sudoku.model;
 
 public class SudokuTile {
-    int actualNumber;
-    int expectedNumber;
+    int actualNumber; //user input
+    int expectedNumber; // correct number
     boolean fixedNumber;
 
     public boolean isFixedNumber() {
