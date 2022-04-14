@@ -26,7 +26,7 @@ public class SudokuController {
 
     //the homepage
     @RequestMapping("/")
-    public String displayHome(ModelMap modelMap){
+    public String displaySudokuHome(ModelMap modelMap){
         modelMap = cycleModelMaps(modelMap);
         return "sudoku";
     }
