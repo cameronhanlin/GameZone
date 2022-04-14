@@ -35,7 +35,23 @@
 
 
 </head>
-<body>
+<body onload="window.scrollTo(0,document.body.scrollHeight);">
+
+
+
+<div>
+    <a href="/startNewGame">
+        <button >Start new Game</button>
+    </a>
+</div>
+
+<br>
+
+<div>
+    <a href="/SolvePuzzle">
+        <button >Solve the Puzzle</button>
+    </a>
+</div>
 
 <div class="mode-switch">
     <div th:hidden="${!writingTool}">
@@ -48,15 +64,9 @@
             <button >✒️ Switch to Pen</button>
         </a>
     </div>
-
 </div>
 
-<div>
-    <a href="/startNewGame">
-        <button >Start new Game</button>
-    </a>
-</div>
-<br>
+
 <br>
 
 <div th:hidden="${!winCondition}">
@@ -73,31 +83,68 @@
             <div th:each="currentTile : ${currentRow}">
                 <div class="cell">
                     <div th:hidden="${!currentTile.fixedNumber}">
-                        <div th:text="${currentTile.expectedNumber}"></div>
+                        <div class="fixedFont">
+                            <div th:text="${currentTile.expectedNumber}"></div>
+                        </div>
                     </div>
                     <div th:hidden="${currentTile.fixedNumber}">
                         <div th:hidden="${!writingTool}"> <!--Using a pen-->
                             <div class="inputBox">
                                 <div th:hidden="${currentTile.notZero}">
+
                                     <form th:action="'/UserMove/'+${currentTile.id}">
+
                                         <label for="gname"></label>
-                                        <input type="text" id="gname" name="makeMark" size="8rem"><br><br>
+                                        <input class="cellInput" type="text" id="gname" name="makeMark"><br><br>
 
                                     </form>
+                                    <div class="pencil">
+                                        <strong th:each="oneMark : ${currentTile.pencilMarks}">
+                                            <strong th:text="${oneMark}+' '"></strong>
+                                        </strong>
+                                    </div>
                                 </div>
                                 <div th:hidden="${!currentTile.notZero}">
+
                                     <form th:action="'/UserMove/'+${currentTile.id}">
+
                                         <label for="fname"></label>
-                                        <input type="text" id="fname" name="makeMark" size="8rem" th:value="${currentTile.actualNumber}"><br><br>
+                                        <input class="cellInput" type="text" id="fname" name="makeMark" th:value="${currentTile.actualNumber}"><br><br>
 
                                     </form>
+                                    <div class="pencil">
+                                        <strong th:each="oneMark : ${currentTile.pencilMarks}">
+                                            <strong th:text="${oneMark}+' '"></strong>
+                                        </strong>
+                                    </div>
                                 </div>
                             </div>
 
 
                         </div>
                         <div th:hidden="${writingTool}">  <!--Using a pencil-->
-                            Pencil
+
+
+
+                            <div th:hidden="${currentTile.notZero}">
+                                <form th:action="'/PencilMark/'+${currentTile.id}">
+
+                                    <label for="Mname"></label>
+                                    <input class="cellInput" type="text" id="Mname" name="makeMark"><br><br>
+
+                                </form>
+                                <div class="pencil">
+                                    <strong th:each="oneMark : ${currentTile.pencilMarks}">
+                                        <strong th:text="${oneMark}+' '"></strong>
+                                    </strong>
+                                </div>
+                            </div>
+                            <div th:hidden="${!currentTile.notZero}">
+                                <div class="fixedFont">
+                                    <div th:text="${currentTile.actualNumber}"></div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -105,6 +152,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<br>
+<div>
+    Press [ENTER] to submit a number, enter '0' to clear a mark
 </div>
 
 

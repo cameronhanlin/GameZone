@@ -101,6 +101,25 @@ public class SudokuBoard {
                     } else {
                         tile.setNotZero(true);
                     }
+                    tile.clearPencilMark();
+                    tile.setUserFilled(true);
+
+                    break;
+                }
+            }
+        }
+    }
+
+    public void addPencilCell(int id, int number) {
+        for (ArrayList<SudokuTile> row : board) {
+            for (SudokuTile tile: row) {
+                if (tile.getId() == id) {
+                    if(number == 0){
+                        tile.clearPencilMark();
+                    } else {
+                        tile.addPencilMark(number);
+                    }
+
 
 
                     break;
@@ -151,6 +170,21 @@ public class SudokuBoard {
         }
         return true;
     }
+
+    public void makeBoardSolved(){
+        for (ArrayList<SudokuTile> row : board) {
+            for (SudokuTile tile: row) {
+                tile.setActualNumber(tile.getExpectedNumber());
+                tile.clearPencilMark();
+                tile.setNotZero(true);
+                tile.setUserFilled(true);
+            }
+        }
+
+
+    }
+
+
 
 
 }

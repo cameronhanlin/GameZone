@@ -1,12 +1,17 @@
 package com.detroitlabs.GameZone.Sudoku.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class SudokuTile {
 
     private int actualNumber; //user input
     private int expectedNumber; // correct number
     private boolean fixedNumber;
     private boolean notZero;
+    private boolean userFilled;
     private int id;
+    private ArrayList<Integer> pencilMarks = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -30,7 +35,8 @@ public class SudokuTile {
         this.fixedNumber = fixedNumber;
         this.id = id;
         this.notZero = false;
-
+        pencilMarks.clear();
+        userFilled = false;
 
     }
 
@@ -56,5 +62,32 @@ public class SudokuTile {
 
     public void setNotZero(boolean notZero) {
         this.notZero = notZero;
+    }
+
+    public ArrayList<Integer> getPencilMarks() {
+        return pencilMarks;
+    }
+
+    public void setPencilMarks(ArrayList<Integer> pencilMarks) {
+        this.pencilMarks = pencilMarks;
+    }
+
+    public boolean isUserFilled() {
+        return userFilled;
+    }
+
+    public void setUserFilled(boolean userFilled) {
+        this.userFilled = userFilled;
+    }
+
+    public void addPencilMark(int number){
+        if(!pencilMarks.contains(number)){
+            pencilMarks.add(number);
+            Collections.sort(pencilMarks);
+        }
+    }
+
+    public void clearPencilMark(){
+        pencilMarks.clear();
     }
 }

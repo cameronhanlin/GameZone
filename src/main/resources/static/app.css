@@ -7,6 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
+    font-family: Arial, sans-serif;
 }
 
 .sudoku {
@@ -45,6 +46,45 @@ body {
 
 .inputBox{
     align-items: center;
+}
+
+.cellInput{
+    align-items: center;
+
+    width: 4.7rem;
+    height: 4.7rem;
+    text-align: center;
+
+
+    font-size:30px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: #FFFFFF00;
+
+}
+
+.fixedFont{
+    font-size:30px;
+}
+
+.pencil{
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+
+    text-align: center;
+    vertical-align: bottom;
+
+    font-size: 10px;
+    opacity: 30%;
+    width: 5rem;
+    height: 1rem;
+
+    vertical-align: text-bottom;
+
 }
 
 
