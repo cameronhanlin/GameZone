@@ -5,6 +5,7 @@ public class SudokuTile {
     private int actualNumber; //user input
     private int expectedNumber; // correct number
     private boolean fixedNumber;
+    private boolean notZero;
     private int id;
 
     public int getId() {
@@ -28,6 +29,8 @@ public class SudokuTile {
         this.expectedNumber = expectedNumber;
         this.fixedNumber = fixedNumber;
         this.id = id;
+        this.notZero = false;
+
 
     }
 
@@ -45,5 +48,13 @@ public class SudokuTile {
 
     public void setActualNumber(int actualNumber) {
         this.actualNumber = actualNumber;
+    }
+
+    public boolean isNotZero() {
+        return notZero;
+    }
+
+    public void setNotZero(boolean notZero) {
+        this.notZero = notZero;
     }
 }

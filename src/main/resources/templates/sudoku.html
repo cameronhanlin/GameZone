@@ -2,8 +2,38 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <link rel="stylesheet" th:href="@{/app.css}" />
     <title>Sudoko - with Cameron and Ehab</title>
+
+
+    <style>
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            width: 45rem;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
+    </style>
+
+
+
+
 </head>
 <body>
 
@@ -26,6 +56,15 @@
         <button >Start new Game</button>
     </a>
 </div>
+<br>
+<br>
+
+<div th:hidden="${!winCondition}">
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Congratulations!</strong> you solved the board!
+    </div>
+</div>
 
 
 <div class="sudoku">
@@ -39,12 +78,20 @@
                     <div th:hidden="${currentTile.fixedNumber}">
                         <div th:hidden="${!writingTool}"> <!--Using a pen-->
                             <div class="inputBox">
-                                <div th:text="${currentTile.actualNumber}"></div>
-                                <form th:action="'/UserMove/'+${currentTile.id}">
-                                    <label for="fname"></label>
-                                    <input type="text" id="fname" name="makeMark" size="8rem"><br><br>
+                                <div th:hidden="${currentTile.notZero}">
+                                    <form th:action="'/UserMove/'+${currentTile.id}">
+                                        <label for="gname"></label>
+                                        <input type="text" id="gname" name="makeMark" size="8rem"><br><br>
 
-                                </form>
+                                    </form>
+                                </div>
+                                <div th:hidden="${!currentTile.notZero}">
+                                    <form th:action="'/UserMove/'+${currentTile.id}">
+                                        <label for="fname"></label>
+                                        <input type="text" id="fname" name="makeMark" size="8rem" th:value="${currentTile.actualNumber}"><br><br>
+
+                                    </form>
+                                </div>
                             </div>
 
 
@@ -59,6 +106,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 

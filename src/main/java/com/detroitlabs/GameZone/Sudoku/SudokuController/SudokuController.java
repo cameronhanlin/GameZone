@@ -66,6 +66,8 @@ public class SudokuController {
     public ModelMap cycleModelMaps(ModelMap modelMap){
         modelMap.put("theBoard", convertToNineThreeByThree(sudokuBoard.getBoard()));
         modelMap.put("writingTool", usingPen);
+        modelMap.put("winCondition", sudokuBoard.isBoardSolved());
+
 
         return modelMap;
     }

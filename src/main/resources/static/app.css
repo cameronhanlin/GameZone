@@ -15,8 +15,8 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 81rem;
-    height: 81rem;
+    width: 45rem;
+    height: 45rem;
     outline: 2px solid #ccc;
 }
 
@@ -26,8 +26,8 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 27rem;
-    height: 27rem;
+    width: 15rem;
+    height: 15rem;
     outline: 3px solid #ccc;
 }
 
@@ -38,8 +38,8 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 9rem;
-    height: 9rem;
+    width: 5rem;
+    height: 5rem;
     outline: 1px solid #ccc;
 }
 
@@ -106,4 +106,26 @@ body {
 .mode-switch {
     font-size: 2rem;
     margin-bottom: 2rem;
+}
+
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: black;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
 }

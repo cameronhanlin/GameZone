@@ -95,6 +95,14 @@ public class SudokuBoard {
             for (SudokuTile tile: row) {
                 if (tile.getId() == id) {
                     tile.setActualNumber(number);
+
+                    if(tile.getActualNumber()==0){
+                        tile.setNotZero(false);
+                    } else {
+                        tile.setNotZero(true);
+                    }
+
+
                     break;
                 }
             }
