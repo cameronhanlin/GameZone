@@ -30,6 +30,7 @@ public class GameController {
     public String handleRegistration(@RequestParam Map<String, String> userInput) {
         User user = new User(userInput.get("name"), userInput.get("email"), userInput.get("name"), userInput.get("password"));
         userRepository.getUsers().add(user);
+
         return "login";
     }
 
