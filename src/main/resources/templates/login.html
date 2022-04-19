@@ -35,7 +35,7 @@
                     <label>Password</label>
                 </div>
                 <div class="submit">
-                    <button onclick=logincheck() class="dark">Login</button>
+                    <button onclick=loginCheck() class="dark">Login</button>
                 </div>
             </form>
             <form th:action="@{/register}" method="post" id="register" tabindex="502">
@@ -57,7 +57,7 @@
                     <label>Password</label>
                 </div>
                 <div class="submit">
-                    <button class="dark">Register</button>
+                    <button onclick=createAccount() class="dark">Register</button>
                 </div>
             </form>
         </div>
@@ -100,7 +100,7 @@
     });
 </script>
 <script th:inline="javascript">
-    function logincheck() {
+    function loginCheck() {
 
         /*<![CDATA[*/
 
@@ -110,6 +110,10 @@
         if (status === "false") {
             alert("The email or password you entered doesn't exist or is incorrect. Please create an account or try again. Sorry we don't offer password resets here");
         }
+    }
+
+    function createAccount() {
+        alert("Account Successfully created! Please note that our servers store your passwords in plain text with no encryption, furthermore accounts are temporary and only exist until our server crashes or reboots. Sorry for the inconvenience " + String.fromCodePoint(0x1F604));
     }
 </script>
 </body>
