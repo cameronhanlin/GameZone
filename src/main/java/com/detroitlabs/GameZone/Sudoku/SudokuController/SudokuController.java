@@ -53,12 +53,33 @@ public class SudokuController {
     public String makePlayerMove(@PathVariable String tileID, @RequestParam String makeMark, ModelMap modelMap){
         System.out.println("tile number "+tileID);
         System.out.println("Mark it a "+ makeMark);
-        sudokuBoard.updateCell(Integer.valueOf(tileID), Integer.valueOf(makeMark));
+
+        if(makeMark.matches("[0-9]") && makeMark.length()==1){
+            sudokuBoard.updateCell(Integer.valueOf(tileID), Integer.valueOf(makeMark));
+        }
+
         modelMap = cycleModelMaps(modelMap);
 
         //check makeMark check that its actually a number
         //if its a good number set the tile and number to change it?
         //make it pretty
+        return "sudoku";
+    }
+
+    @RequestMapping("/PencilMark/{tileID}")
+    public String addPencilMark(@PathVariable String tileID, @RequestParam String makeMark, ModelMap modelMap){
+        if(makeMark.matches("[0-9]") && makeMark.length()==1){
+            sudokuBoard.addPencilCell(Integer.valueOf(tileID), Integer.valueOf(makeMark));
+
+        }
+        modelMap = cycleModelMaps(modelMap);
+        return "sudoku";
+    }
+
+    @RequestMapping("/SolvePuzzle")
+    public String makePuzzleSolved(ModelMap modelMap){
+        sudokuBoard.makeBoardSolved();
+        modelMap = cycleModelMaps(modelMap);
         return "sudoku";
     }
 
